@@ -37,14 +37,42 @@ DOCTYPE 告诉浏览器按照什么规则解析你的标签
 	<!--页面编码(告诉浏览器是什么编码)-->
 
 	<meta http-equiv="Refresh" Content="30">
+	<!--刷新和跳转,30秒刷新一次-->
 	<meta http-equit="Refresh" Content="5; Url=http://www.autohome.com.cn">
 	<!--刷新和跳转-->
 
 	<meta name="keywords" content="星际">
 
+	<meta http-equit="X-UA-Compatible" content="IE=edge">
+	<!--兼容IE-->
+
 我下面出现的效果都是用utf-8编码,让浏览器去解释
 
-	<title name="html"> </title>
-	
+
+[title标签]
 标题信息, name="html"叫做标签的属性
 
+	<title name="html"> </title>
+
+[link标签]
+引入CSS
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+---	
+引入icon
+	<linke rel="shorecut icon" href="image/favicon.ico">
+
+
+DIV自身没有什么效果, 
+我们加CSS,就是为了给它添加效果, 相当于我给你提供一个标签, 这个标签它的自身的功能特别的少,
+我通过css就可以给它附件很多的功能, 这个功能我想让它变成就什么,就可以变成什么, 所以才叫div+css
+
+[span标签]
+
+在html里面, 我们用到的标签分成了两大类, 
+- 块标签, 自己就占用一行
+	<div> <hl> <p>
+- 内联标签, 我内容有多少, 我就占用多少
+	<a> <span> <select>
+
+"<" 可以写成&lt;
+在html里面特殊的符号, 是由特殊的代码来做展示的
