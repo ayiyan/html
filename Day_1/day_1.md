@@ -214,3 +214,32 @@ inpute系列标签 type:
     </body>
     
 提交数据
+
+    <form action="htt://www.baidu.com" method="POST" enctype="multipart/form-data">
+    	<input type="text" name="user" />
+    	<input type="password" name="pwd" />
+    	男 <input type="radio" name="gender" value="1"/>
+    	女 <input type="radio" name="gender" value="2" />
+		<p>爱好:
+			篮球 <inpute name="favor" type="checkbox" value="1" />
+			足球 <inpute name="favor" type="checkbox" value="2" />
+			玻璃球 <inpute name="favor" type="checkbox" value="3" />
+		</p>
+		<P>文件:
+			<input type="file" name="asdfasdf">
+		</P>
+		<p>
+			<select name="city">
+				<option value="1">北京</option>	
+				<option value="2">上海</option>	
+				<option value="3">广州</option>				
+			</select>
+		</p>
+		<p>
+			备注: <textarea name="extra"></textarea>
+		</p>
+    	<input type="submit" value="submit" />
+    </form>
+
+如果要上传文件的话,就必须要加上 enctype="multipart/form-data", 只有加上这个选项,文件才能源源不断的分块
+上传到服务器端, 不然文件本身是无法上传到服务器端的
