@@ -202,7 +202,8 @@ inpute系列标签 type:
 - submit(提交当前表单)
 - reset(重置表单)
 
-    
+---
+
     <body>
     	<form action="htt://www.baidu.com" method="get">
     		<input type="text" />
