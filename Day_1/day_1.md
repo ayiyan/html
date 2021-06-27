@@ -202,12 +202,12 @@ inpute系列标签 type:
 - submit(提交当前表单)
 - reset(重置表单)
 
-
-	<body>
-		<form action="htt://www.baidu.com" method="get">
-			<input type="text" />
-			<input type="submit" value="提交" />
-		</form>
-	</body>
-
+    
+    <body>
+    	<form action="htt://www.baidu.com" method="get">
+    		<input type="text" />
+    		<input type="submit" value="提交" />
+    	</form>
+    </body>
+    
 提交数据
