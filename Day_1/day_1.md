@@ -76,3 +76,29 @@ DIV自身没有什么效果,
 
 "<" 可以写成&lt;
 在html里面特殊的符号, 是由特殊的代码来做展示的
+
+[p标签]
+表示是一个段落
+	<p>asdfasdf</p>
+p标签的段落之间的空白有点多, 这是因为<P>标签默认有一个自己多占用的行,除了内容本身,额外又多占用了一些, 段落和段落之间有些间距
+
+[br标签]
+换行标签,自闭合标签
+	<br/>
+
+[a标签]
+有特殊的属性叫做href
+	<a href="http://www.baidu.com">xx</a>
+
+启用新的tag页进行跳转
+	<a href="http://www.baidu.com" target="_blank">xx</a>
+
+[锚点]
+	<a href="#i1">第一章</a>
+	<!--跳转到id=i1那里-->
+	<a href="#i2">第二章</a>
+	<a href="#i3">第三章</a>
+	
+	<div id="i1"  style="height: 500px"> 第一章内容 </div>
+	<div id="i2"  style="height: 500px"> 第二章内容 </div>
+	<div id="i3"  style="height: 500px"> 第三章内容 </div>
