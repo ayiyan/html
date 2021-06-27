@@ -50,15 +50,21 @@ DOCTYPE 告诉浏览器按照什么规则解析你的标签
 
 
 [title标签]
+
 标题信息, name="html"叫做标签的属性
 
 	<title name="html"> </title>
 
 [link标签]
+
 引入CSS
+
 	<link rel="stylesheet" type="text/css" href="css/common.css">
+
 ---	
+
 引入icon
+
 	<linke rel="shorecut icon" href="image/favicon.ico">
 
 
@@ -82,6 +88,7 @@ DIV自身没有什么效果,
 在html里面特殊的符号, 是由特殊的代码来做展示的
 
 [p标签]
+
 表示是一个段落
 
 	<p>asdfasdf</p>
@@ -89,10 +96,12 @@ DIV自身没有什么效果,
 p标签的段落之间的空白有点多, 这是因为<P>标签默认有一个自己多占用的行,除了内容本身,额外又多占用了一些, 段落和段落之间有些间距
 
 [br标签]
+
 换行标签,自闭合标签
 	<br/>
 
 [a标签]
+
 有特殊的属性叫做href
 
 	<a href="http://www.baidu.com">xx</a>
