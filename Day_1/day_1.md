@@ -123,3 +123,91 @@ p标签的段落之间的空白有点多, 这是因为<P>标签默认有一个�
 	<div id="i1"  style="height: 500px"> 第一章内容 </div>
 	<div id="i2"  style="height: 500px"> 第二章内容 </div>
 	<div id="i3"  style="height: 500px"> 第三章内容 </div>
+
+id也是不允许重复的
+    
+**[div标签]**
+    
+    <body>
+    	<div style="color: green;">
+    		asdfasdf		
+    		<div style="color: red;">
+    			<div>
+    				<a>asdf</a>
+    			</div>
+    		</div>
+    	</div>
+    </body>
+
+**[input标签 & select标签 & textarea & form]**
+
+	<body>
+		<form>
+			<div style="border: 1px solid red;">
+			<p> 用户名: <input type="text"/> </p>
+			<p> 密码: <input type="password"/> </p>
+			<p> 性别: 
+				<br /> 男 <input type="radio" name="gender" /> 
+				<br /> 女 <input type="radio" name="gender"/> 
+			</p> 
+			<p> 爱好:
+				<br /> 羽毛球 <input type="checkbox" />
+				<br /> 吉他 <input type="checkbox" />
+				<br /> 轮滑 <input type="checkbox" />			
+			</p>
+			<p> 城市:
+				<select>
+					<option> 北京 </option>
+					<option> 上海 </option>
+					<option> 广州 </option>
+				</select>
+				<select multiple size="10">
+					<option> 北京 </option>
+					<option> 上海 </option>
+					<option> 广州 </option>
+				</select>
+				<select>
+					<optgroup label="辽宁省">
+						<option> 大连 </option>
+						<option> 沈阳 </option>
+					</optgroup>
+					<optgroup label="江苏省">
+						<option> 南京 </option>
+						<option> 苏州 </option>
+					</optgroup>
+				</select>
+			</p>
+			<p>文件: 
+				<input type="file"/>
+			</p>
+			<p>备注:
+				<textarea></textarea>
+			</p>
+			<inpute type="submit" value="submit"/>
+			<inpute type="button" value="button"/>
+			<inpute type="reset" value="reset"/>
+		</form>
+	</body>
+
+只要name=gender 相同, 它俩就可以互斥了
+size="10", 默认显示10个, 超过10个就给添加滚动条
+
+inpute系列标签 type:
+- text
+- password
+- radio
+- checkbox
+- file
+- button(普通的按钮)
+- submit(提交当前表单)
+- reset(重置表单)
+
+
+	<body>
+		<form action="htt://www.baidu.com" method="get">
+			<input type="text" />
+			<input type="submit" value="提交" />
+		</form>
+	</body>
+
+提交数据
