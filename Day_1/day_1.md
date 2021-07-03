@@ -243,3 +243,61 @@ inpute系列标签 type:
 
 如果要上传文件的话,就必须要加上 enctype="multipart/form-data", 只有加上这个选项,文件才能源源不断的分块
 上传到服务器端, 不然文件本身是无法上传到服务器端的
+
+**[label标签]**
+
+label标签作用不大, 只能说是在小细节方面帮你做一个用户体验的提升, 
+
+**[ul ol dl标签]**
+
+ul默认加上前缀效果
+
+    <ul>
+    	<li>asdfasdf</li>
+    	<li>asdfasdf</li>
+    	<li>asdfasdf</li>
+    </ul>
+    
+    <ol>
+    	<li>asdfasdf</li>
+    	<li>asdfasdf</li>
+    	<li>asdfasdf</li>
+    </ol>
+    
+    <dl>
+    	<li>asdfasdf</li>
+    	<li>asdfasdf</li>
+    	<li>asdfasdf</li>
+    </dl>
+
+**[table标签]**
+
+    <body>
+    	<table border="1">
+    		<thead>
+				<tr>
+					<td colspan="2">第一列</td>
+					#colspan 这个标签占用2个空格
+					<td>第二列</td>
+					<td>第三列</td>
+				</tr>
+			</thead>
+    		<tbody>
+				<tr>
+					<td>第一列</td>
+					<td rowspan="2">第二列</td>
+					<td>第三列</td>
+				</tr>
+			</tbody>
+    	</table>
+    </body>
+
+**[fieldset标签]**
+
+
+**[iframe标签]**
+
+    <iframe style="width: 100%; height: 2000px;" src="http://autohome.com.cn"></iframe>
+
+src写上哪个网址, 相当于把那个网址的东西放到你这框里展示出来了, 其实就这么个功能, 
+对于真实的可用iframe做什么, 上传文件或跨域的时候会涉及到它
