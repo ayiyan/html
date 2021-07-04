@@ -116,4 +116,101 @@ css的存放位置
 在html标签里面id是不可以重复的, #i1这么写, 只找到一个为它加上样式
 但是class是可以重复的, 并且.c1也是用过最多的方式
 
+    <html>
+    <head>
+    	<meta charset="UTF-8">
+    	<title></title>
+    	<style>
+    		.c1{
+    			color: red;
+    			background-color: aqua;
+				background-color: #ddd;
+				background-color: rgb(0,0,0);
+				/* 也可以通过RGB的形式来写 */
+    			front-size: 32px;
+				height: 50px;
+				width: 100%;
+				/*宽度和高度就是设置当前div的宽度和高度的*/
+				/*宽度是有100%的, 高度是没有100%的*/
+    		}
+    	</style>
+    </head>
+    <body>
+    	<div class="c1">asdfasdf</div>
+		<div style="width: 500px">
+			<div style="width: 20%; background-color: antiquewhite; float: left">asdf</div>
+			/*相对于500来说占用 20%*/
+			<div style="width: 80%; background-color: palegodenrod; float: left">asdf</div>
+			/*相对于500来说占用 80%*/		
+		</div>
+    </body>
+    </html>
+
+<div>是块级标签, 默认是占一整行的
+
+---
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.img{
+				background-image: url("4.gif");
+				background-repeat: no-repeat;
+				background-position: 0px;
+				border-top-color: red;
+				border-top-style: red;
+				border-top-width: 4px;
+				height: 50px;
+				width: 200px;
+				display: none;
+				visibility: hidden;
+			}
+			.img2{
+				background-image: url("4.gif");
+				height: 20px;
+				width: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="img"></div>
+		<div class="img2"></div>
+	</body>
+
+这个div没高度,没宽度,加背景色其实是看不到的
+如果我挖的洞特别大的话, 那它不是给你铺满而是一直放
+默认情况下, 都是这样来搞的, 
+background-repeat, 表示我不重复给你显示, 不论你这个洞挖多大, 该显示什么样, 就显示什么样, 
+background-position, 显示图片的位置
+border-top-color, 上边框是什么样式的
+border-top-style, 上边框是什么类型的
+border-top-width, 
+display, 把哪个标签隐藏起来, 让位置消失
+display: inline, 把块级标签变成内联标签
+display: block, 变成块级标签
+visibility, 只是让内容消失, 位置还在
+
+---
+    
+    <head>
+    	<meta charset="UTF-8">
+    	<title></title>
+    </head>
+    <body>
+    	<span style="background-color: red; height: 50px; width: 200px;">asdfasdf</span>
+		<span style="display:inline-block; height: 50px; background-color: red;"></span>
+    </body>
+
+纯内联标签它的高度和宽度都不生效,
+块级标签可以写高度和宽度,
+inline-block, 具有内联标签的属性, 又具有块标签的属性
+
+    <span style="cursor: pointer;">pointer</span>
+    <span style="cursor: help;">help</span>
+    <span style="cursor: wait;">wait</span>
+    <span style="cursor: move;">move</span>
+    <span style="cursor: crosshair;">crosshair</span>
+   
+---
 
