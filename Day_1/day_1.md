@@ -6,7 +6,7 @@
 - 效果, color: 
 
     color: red;
-	
+
 3, JavaScript
 - 稍微会多些内容(语言基础:数据类型, 数据类型提供了哪些方法等)
 - 效果, 先查找, 然后操作
@@ -16,6 +16,7 @@
 我在我的浏览器上, 我的浏览器就是一个socket客户端, 
 
 4, jQuery
+
 相当于是javascript的一个类库
 
 html & css & javascript, 学会了前端的东西就算学会了,它是前端的三把利器
@@ -26,26 +27,30 @@ javascript 不再让这个人是个静态的人,而是让这个人可以动起�
 javascript 和 java之间一点关系都没有, 可能只是名字上相似而已
 javascript 和 python一样是一门编程语言, 只不过这门编程语言是在浏览器上给大家看的
 
-	<!DOCTYPE html>
+```
+<!DOCTYPE html>
+```
 
 DOCTYPE 告诉浏览器按照什么规则解析你的标签
 
-	<meta charset="UTF-8">
-	<!--自闭合标签-->
+```
+<meta charset="UTF-8">
+<!--自闭合标签-->
 
-	<meta http-equiv="content-type" content="text/html;charset=utf-8">
-	<meta charset="UTF-8">
-	<!--页面编码(告诉浏览器是什么编码)-->
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta charset="UTF-8">
+<!--页面编码(告诉浏览器是什么编码)-->
 
-	<meta http-equiv="Refresh" Content="30">
-	<!--刷新和跳转,30秒刷新一次-->
-	<meta http-equit="Refresh" Content="5; Url=http://www.autohome.com.cn">
-	<!--刷新和跳转-->
+<meta http-equiv="Refresh" Content="30">
+<!--刷新和跳转,30秒刷新一次-->
+<meta http-equit="Refresh" Content="5; Url=http://www.autohome.com.cn">
+<!--刷新和跳转-->
 
-	<meta name="keywords" content="星际">
+<meta name="keywords" content="星际">
 
-	<meta http-equit="X-UA-Compatible" content="IE=edge">
-	<!--兼容IE-->
+<meta http-equit="X-UA-Compatible" content="IE=edge">
+<!--兼容IE-->
+```
 
 我下面出现的效果都是用utf-8编码,让浏览器去解释
 
@@ -54,19 +59,26 @@ DOCTYPE 告诉浏览器按照什么规则解析你的标签
 
 标题信息, name="html"叫做标签的属性
 
-	<title name="html"> </title>
+```
+<title name="html"> </title>
+```
 
 **[link标签]**
 
 引入CSS
 
-	<link rel="stylesheet" type="text/css" href="css/common.css">
+```
+<link rel="stylesheet" type="text/css" href="css/common.css">
 
----	
+```
+
+
 
 引入icon
 
-	<linke rel="shorecut icon" href="image/favicon.ico">
+```
+<linke rel="shorecut icon" href="image/favicon.ico">
+```
 
 
 DIV自身没有什么效果, 
@@ -78,11 +90,15 @@ DIV自身没有什么效果,
 在html里面, 我们用到的标签分成了两大类, 
 - 块标签, 自己就占用一行
 
-	`<div> <hl> <p>`
+```
+`<div> <hl> <p>`
+```
 
 - 内联标签, 我内容有多少, 我就占用多少
 
-	`<a> <span> <select>`
+```
+`<a> <span> <select>`
+```
 
 ---
 
@@ -96,100 +112,114 @@ DIV自身没有什么效果,
 
 表示是一个段落
 
-	<p>asdfasdf</p>
+```
+<p>asdfasdf</p>
+```
 
 p标签的段落之间的空白有点多, 这是因为<P>标签默认有一个自己多占用的行,除了内容本身,额外又多占用了一些, 段落和段落之间有些间距
 
 **[br标签]**
 
 换行标签,自闭合标签
-	<br/>
+```
+<br/>
+```
 
 **[a标签]**
 
 有特殊的属性叫做href
 
-	<a href="http://www.baidu.com">xx</a>
+```
+<a href="http://www.baidu.com">xx</a>
+```
 
 启用新的tag页进行跳转
 
-	<a href="http://www.baidu.com" target="_blank">xx</a>
+```
+<a href="http://www.baidu.com" target="_blank">xx</a>
 
+```
 **[锚点]**
 
-	<a href="#i1">第一章</a>
-	<!--跳转到id=i1那里-->
-	<a href="#i2">第二章</a>
-	<a href="#i3">第三章</a>
-	
-	<div id="i1"  style="height: 500px"> 第一章内容 </div>
-	<div id="i2"  style="height: 500px"> 第二章内容 </div>
-	<div id="i3"  style="height: 500px"> 第三章内容 </div>
+```
+<a href="#i1">第一章</a>
+<!--跳转到id=i1那里-->
+<a href="#i2">第二章</a>
+<a href="#i3">第三章</a>
+
+<div id="i1"  style="height: 500px"> 第一章内容 </div>
+<div id="i2"  style="height: 500px"> 第二章内容 </div>
+<div id="i3"  style="height: 500px"> 第三章内容 </div>
+```
 
 id也是不允许重复的
-    
+
 **[div标签]**
     
-    <body>
-    	<div style="color: green;">
-    		asdfasdf		
-    		<div style="color: red;">
-    			<div>
-    				<a>asdf</a>
-    			</div>
+```
+<body>
+    <div style="color: green;">
+    	asdfasdf		
+    	<div style="color: red;">
+    		<div>
+    			<a>asdf</a>
     		</div>
     	</div>
-    </body>
+    </div>
+</body>
+```
 
 **[input标签 & select标签 & textarea & form]**
 
-	<body>
-		<form>
-			<div style="border: 1px solid red;">
-			<p> 用户名: <input type="text"/> </p>
-			<p> 密码: <input type="password"/> </p>
-			<p> 性别: 
-				<br /> 男 <input type="radio" name="gender" /> 
-				<br /> 女 <input type="radio" name="gender"/> 
-			</p> 
-			<p> 爱好:
-				<br /> 羽毛球 <input type="checkbox" />
-				<br /> 吉他 <input type="checkbox" />
-				<br /> 轮滑 <input type="checkbox" />			
-			</p>
-			<p> 城市:
-				<select>
-					<option> 北京 </option>
-					<option> 上海 </option>
-					<option> 广州 </option>
-				</select>
-				<select multiple size="10">
-					<option> 北京 </option>
-					<option> 上海 </option>
-					<option> 广州 </option>
-				</select>
-				<select>
-					<optgroup label="辽宁省">
-						<option> 大连 </option>
-						<option> 沈阳 </option>
-					</optgroup>
-					<optgroup label="江苏省">
-						<option> 南京 </option>
-						<option> 苏州 </option>
-					</optgroup>
-				</select>
-			</p>
-			<p>文件: 
-				<input type="file"/>
-			</p>
-			<p>备注:
-				<textarea></textarea>
-			</p>
-			<inpute type="submit" value="submit"/>
-			<inpute type="button" value="button"/>
-			<inpute type="reset" value="reset"/>
-		</form>
-	</body>
+```
+<body>
+	<form>
+		<div style="border: 1px solid red;">
+		<p> 用户名: <input type="text"/> </p>
+		<p> 密码: <input type="password"/> </p>
+		<p> 性别: 
+			<br /> 男 <input type="radio" name="gender" /> 
+			<br /> 女 <input type="radio" name="gender"/> 
+		</p> 
+		<p> 爱好:
+			<br /> 羽毛球 <input type="checkbox" />
+			<br /> 吉他 <input type="checkbox" />
+			<br /> 轮滑 <input type="checkbox" />			
+		</p>
+		<p> 城市:
+			<select>
+				<option> 北京 </option>
+				<option> 上海 </option>
+				<option> 广州 </option>
+			</select>
+			<select multiple size="10">
+				<option> 北京 </option>
+				<option> 上海 </option>
+				<option> 广州 </option>
+			</select>
+			<select>
+				<optgroup label="辽宁省">
+					<option> 大连 </option>
+					<option> 沈阳 </option>
+				</optgroup>
+				<optgroup label="江苏省">
+					<option> 南京 </option>
+					<option> 苏州 </option>
+				</optgroup>
+			</select>
+		</p>
+		<p>文件: 
+			<input type="file"/>
+		</p>
+		<p>备注:
+			<textarea></textarea>
+		</p>
+		<inpute type="submit" value="submit"/>
+		<inpute type="button" value="button"/>
+		<inpute type="reset" value="reset"/>
+	</form>
+</body>
+```
 
 只要name=gender 相同, 它俩就可以互斥了
 size="10", 默认显示10个, 超过10个就给添加滚动条

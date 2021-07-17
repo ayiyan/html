@@ -214,3 +214,57 @@ inline-block, 具有内联标签的属性, 又具有块标签的属性
    
 ---
 
+
+边距(内边距, 外边距)
+我们写上一个标签之后, 我们可以在这个标签的外部加点内容, 内部在加点内容
+默认情况下, 写标签都是从左向右堆积, 
+
+    <div style="height: 70px; border: 1px solid red;">
+		<div style="height: 30px; background-color: green; 	margin-top: 27px; padding-top: 19px;"></div>
+	</div>
+
+margin 外边距, 本身不增加
+padding 上边距, 本身增加
+
+    <div style="height: 100px">
+    	<div style="margin-top: 30px; margin-left: 100px;">
+    		<input />
+    		<input />
+    		<input />
+    	</div>
+    </div>
+
+---
+
+    <body>
+    	<div style="width: 500px;">
+			<div style="width: 20px; background-color: aqua; float: left">g</div>
+			<div style="width: 80px; background-color: beige; float: left">a</div>
+			<div style="clear: both;"></div>
+		</div>
+    </body>
+
+---
+默认是一个标签占一行,但是如果漂浮标签, 就会跑到一行去
+如果第一个标签占用20%, 第二个标签占用90%, 就超过了100%, 第二个标签,就会飘到第二行
+
+position:
+1, relative, 往往这个选项是和absolute结合着使用的
+2, absolute, 虽然是按你的窗口固定在那个位置, 但是我去拉动这个文档的时候, 位置照样会变, 就不能永远固定在那个位置了
+3, fixed 固定, 相对于浏览器的窗口, 想固定哪里就固定哪里
+    
+    <body>
+    	<div style="height: 1000px; background-color: #ddd;"></div>
+		<div style="position: fixed;">返回顶部</div>
+		<!--将会固定在某个位置-->
+		<div style="position: fixed; top:0px;">返回顶部</div>
+		<!--将会固定在顶部-->
+    </body>
+
+---
+
+    <body>
+    	<div style="height: 500px; width: 400px; border: 1px solid red; position: relative;">
+			<div style="position: absolute; bottom: 0; right: 0">111</div>
+    	</div>
+    </body>
