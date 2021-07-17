@@ -94,19 +94,31 @@ DIV自身没有什么效果,
 `<div> <hl> <p>`
 ```
 
+```
+<body>
+    <h1>标题标签</h1>
+    <h1>标题一共六级选</h1>
+    <h2>文件加粗一行显</h2>
+    <h3>由大到小依次减</h3>
+    <h4>从中到轻随之变</h4>
+    <h5>语法规范书写后</h5>
+    <h6>具体效果刷新见</h6>
+</body>
+```
+
 - 内联标签, 我内容有多少, 我就占用多少
 
 ```
 `<a> <span> <select>`
 ```
 
----
+--
 
 #"<" 可以写成 '&lt;'
 
 #在html里面特殊的符号, 是由特殊的代码来做展示的
 
----
+--
 
 **[p标签]**
 
@@ -117,28 +129,75 @@ DIV自身没有什么效果,
 ```
 
 p标签的段落之间的空白有点多, 这是因为<P>标签默认有一个自己多占用的行,除了内容本身,额外又多占用了一些, 段落和段落之间有些间距
+要写几个段落就用几个段落标签
 
 **[br标签]**
 
 换行标签,自闭合标签
+在代码中, 要显示的内容中输入回车键是没有任何作用的, 除非让他遇到我们<br />标签
+
 ```
 <br/>
+```
+
+```
+<body>
+    我是<strong>加粗</strong>的文字
+    我是<b>加粗</b>的文字
+    我是<em>倾斜</em>的文字
+    我是<i>倾斜</i>的文字
+    我是<del>删除线</del>
+    我是<s>删除线</s>
+    我是<ins>下划线</ins>
+    我是<u>下划线</ins>
+</body>
 ```
 
 **[a标签]**
 
 有特殊的属性叫做href
+a 是 anchor的缩写
 
 ```
 <a href="http://www.baidu.com">xx</a>
 ```
 
-启用新的tag页进行跳转
+**启用新的tag页进行跳转**
 
 ```
 <a href="http://www.baidu.com" target="_blank">xx</a>
 
 ```
+
+**内部链接**
+```
+<body>
+    <a href="xx.html">公司简介</a>
+</body>
+```
+
+**空连接**
+当如果没有确定连接目标时,
+```
+<body>
+<a href="#">首页</a>
+</body>
+```
+
+**下载链接**
+```
+<body>
+<a href="img.zip">首页</a>
+</body>
+```
+
+**图片链接**
+```
+<body>
+<a href="http://www.baidu.com"><img src="img.jpg"/></a>
+</body>
+```
+
 **[锚点]**
 
 ```
@@ -155,19 +214,61 @@ p标签的段落之间的空白有点多, 这是因为<P>标签默认有一个�
 id也是不允许重复的
 
 **[div标签]**
-    
+
+div标签最显著的特点就是一个人独占一行
+div是division的缩写, 表示分割, 分区
+
+span一行可以放好多好多个
+span意为跨度, 跨距
+
 ```
 <body>
     <div style="color: green;">
-    	asdfasdf		
-    	<div style="color: red;">
-    		<div>
-    			<a>asdf</a>
+    	asdfasdf
+        <div style="color: red;">
+        <div>
+        <a>asdf</a>
     		</div>
     	</div>
     </div>
 </body>
 ```
+
+**[img标签]**
+
+所谓属性: 简单理解就是属于这个图像标签的特性
+
+```
+<img src="图像URL" />
+```
+
+```
+
+<body>
+    <h4>图像标签的使用: </h4>
+    <img src="img.jpg" />
+    <h4> alt替换文本 图像显示不出来的时候用文字替换: </h4>
+    <img src="img.jpg" alt="我是pink老师"/>
+    <h4> title 提示文本 鼠标放到图像上, 提示的文字: </h4>
+    <img src="img.jpg" alt="我是pink老师" title="我是pink老师思密达"/>
+    <h4> width 给图像设定宽度:</h4>
+    <img src="img.jpg" alt="我是pink老师" title="我是pink老师思密达" width="500">
+    <h4> height 给图像设定高度:</h4>
+    <img src="img.jpg" alt="我是pink老师" title="我是pink老师思密达" width="500" height="100" />
+    <h4> border 给图像设定边框: </h4>
+    <img src="img.jpg" alt="我是pink老师" title="我是pink老师思密达" width="500" height="100" border="15" />
+</body>
+```
+
+当图片显示不出来的时候, 显示"我是pink老师"
+title, 当鼠标放到图片上面去, 会显示文字信息
+
+**目录文件夹:**
+就是普通文件夹, 里面只不过存放了我们做页面所需要的相关素材, 比如html文件, 图片等等, 
+
+**根目录:**
+打开目录文件夹的第一层就是根目录
+
 
 **[input标签 & select标签 & textarea & form]**
 
