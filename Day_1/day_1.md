@@ -139,6 +139,16 @@ p标签的段落之间的空白有点多, 这是因为<P>标签默认有一个�
 ```
 <br/>
 ```
+```
+<body>
+    <h1>圣诞节的那些事</h1>
+    1, 圣诞节是怎么由来的 <br />
+    2, 圣诞老人的由来 <br />
+    3, 圣诞树的由于 <br />
+</body>
+```
+
+
 
 ```
 <body>
@@ -233,6 +243,12 @@ span意为跨度, 跨距
     </div>
 </body>
 ```
+
+**[特殊字符]**
+| 描述    |    字符的代码     |
+| --- | --- |
+|  空格符   | `&nbsp;`    |
+
 
 **[img标签]**
 
@@ -337,17 +353,49 @@ inpute系列标签 type:
 
 ---
 
-    <body>
-    	<form action="htt://www.baidu.com" method="get">
-    		<input type="text" />
-    		<input type="submit" value="提交" />
-    	</form>
-    </body>
-    
+表单域(form)
+
+|  属性   |  属性值   |                      作用                      |
+| ------ | -------- | --------------------------------------------- |
+| action | url地址   | 用于指定接收并处理表单数据的服务器程序的url地址    |
+| method | get/post | 用于设置表单数据的提交方式, 其取值为get或post     |
+| name   | 名称      | 用于指定表单的名称, 以区分同一个页面中的多个表单域 |
+
+
+```
+<body>
+    <form action="htt://www.baidu.com" method="get">
+    	<input type="text" />
+    	<input type="submit" value="提交" />
+    </form>
+</body>
+```
+
 提交数据
 
+对于raido,必须有相同的名字才可以多选一
+
+input表单元素
+| 属性    |   属性值  |  描述   |
+| --- | --- | --- |
+|  name   |   由用户自定义  | 定义input元素的名称    |
+|  value   |    由用户自定义 |   规定input元素的值  |
+|  checked   |     checked |   规定此input元素首次加载时应该被选中  |
+|   maxlength  |  正整数   |    规定输入字段中的字符的最大长度  |
+
+1, name 和value是每个表单元素都有的属性值, 主要给后台人员使用
+2, name表单元素的名字, 要求单选按钮和复选框要有相同的name值
+3, checked属性主要针对于单选按钮和复选框, 主要作用一打开页面,就要可以默认选中某个表单元素
+
+```
+<input type="radio" name="sex" value="男" checked="checked" /> 男
+```
+
+4, maxlength是用户可以在表单元素输入的最大字符数, 一般较少使用
+
+    ```
     <form action="htt://www.baidu.com" method="POST" enctype="multipart/form-data">
-    	<input type="text" name="user" />
+    	<input type="text" name="user" vlaue="请输入密码" />
     	<input type="password" name="pwd" />
     	男 <input type="radio" name="gender" value="1"/>
     	女 <input type="radio" name="gender" value="2" />
@@ -371,6 +419,7 @@ inpute系列标签 type:
 		</p>
     	<input type="submit" value="submit" />
     </form>
+    ```
 
 如果要上传文件的话,就必须要加上 enctype="multipart/form-data", 只有加上这个选项,文件才能源源不断的分块
 上传到服务器端, 不然文件本身是无法上传到服务器端的
@@ -380,48 +429,99 @@ inpute系列标签 type:
 label标签作用不大, 只能说是在小细节方面帮你做一个用户体验的提升, 
 
 **[ul ol dl标签]**
+列表标签
+表格是用来展示数据的, 那列表就是用来布局的
+列表最的的特点就是整齐,整洁, 有序, 它作为布局会更加自由和方便
+
+根据使用场景不同, 列表可以分为三大类, 无序列表(ul), 有序列表(ol), 自定义列表(dl)
 
 ul默认加上前缀效果
 
-    <ul>
-    	<li>asdfasdf</li>
-    	<li>asdfasdf</li>
-    	<li>asdfasdf</li>
-    </ul>
-    
-    <ol>
-    	<li>asdfasdf</li>
-    	<li>asdfasdf</li>
-    	<li>asdfasdf</li>
-    </ol>
-    
-    <dl>
-    	<li>asdfasdf</li>
-    	<li>asdfasdf</li>
-    	<li>asdfasdf</li>
-    </dl>
+1, 无序列表的各个列表项之间没有顺序级别之分, 是并列的
+2, `<ul></ul>` 中只能嵌套,` <li></li>`, 直接在`<ul></ul>`标签中输入其它标签或文字的做法是不被允许的
+3, `<li>`与`</li>` 之间相当于一个容器, 可以容纳所有元素
+4, 无序列表会带有自己的样式属性, 但在实际使用时, 我们会使用css来设置
+
+```
+<ul>
+    <li>asdfasdf</li>
+    <li>asdfasdf</li>
+    <li>asdfasdf</li>
+</ul>
+```
+
+有序列表
+1, `<ol></ol>`中只能嵌套`<li></li>`, 直接在`<ol></ol>`标签中输入其它标签或者文字的做法是不被允许的
+2, `<li></li>` 之间相当于一个容器, 可以容纳所有元素
+3, 有序列表会带有自己样式属性, 但在实际使用时, 我们会使用CSS来设置
+
+```
+<ol>
+    <li>asdfasdf</li>
+    <li>asdfasdf</li>
+    <li>asdfasdf</li>
+</ol>
+```
+
+自定义列表
+自定列表的使用场景
+自定义列表常用语对术语或名词进行解释和描述, 定义列表的列表项没有任何项目符号
+
+1, `<dl></dl>` 里面只能包含`<dt>和<dd>`
+2, `<dt>`和`<dd>`个数没有限制, 经常是一个`<dt>`对应多个`<dd>`
+
+```
+<dl>
+    <dt>asdfasdf</dt>
+    <dd>asdfasdf</dd>
+    <dd>asdfasdf</dd>
+</dl>
+```
 
 **[table标签]**
+表格不是用来布局页面的, 而是用来展示数据的
+合并单元格 rowspan, colspan
 
-    <body>
-    	<table border="1">
-    		<thead>
-				<tr>
-					<td colspan="2">第一列</td>
-					#colspan 这个标签占用2个空格
-					<td>第二列</td>
-					<td>第三列</td>
-				</tr>
-			</thead>
-    		<tbody>
-				<tr>
-					<td>第一列</td>
-					<td rowspan="2">第二列</td>
-					<td>第三列</td>
-				</tr>
-			</tbody>
-    	</table>
-    </body>
+```
+<body>
+    <table border="1">
+    	<thead>
+			<tr>
+				<td colspan="2">第一列</td>
+				#colspan 这个标签占用2个空格
+				<td>第二列</td>
+				<td>第三列</td>
+			</tr>
+		</thead>
+    	<tbody>
+			<tr>
+				<td>第一列</td>
+				<td rowspan="2">第二列</td>
+				<td>第三列</td>
+			</tr>
+		</tbody>
+    </table>
+</body>
+```
+
+align="center"不推荐使用这个方法, 建议使用css方法来实现
+```
+<body>
+    <table align="center">
+        <tr> <th>姓名</th> <th>性别</th> <th>年龄</th> </tr>
+        <tr> <td>刘德华</td> <td>男</td> <td>56</td> </tr>
+    </table>
+</body>
+```
+
+|    属性名    |        属性值        |                    描述                    |
+| ----------- | ------------------- | ------------------------------------------ |
+| align       | left, center, right | 规定表格相对周围元素的对齐方式                |
+| border      | 1 或 ""              | 规定表格单元是否拥有边框，默认为"",表示没有边框 |
+| cellpadding | 像素值               | 规定单元边沿与其内容之间的空白,默认1像素       |
+| cellspacing | 像素值               | 规定单元格之间的空白,默认2像素                |
+| width       | 像素值               | 规定表格的宽度                               |
+
 
 **[fieldset标签]**
 
