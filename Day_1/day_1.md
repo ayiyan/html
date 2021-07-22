@@ -294,14 +294,14 @@ title, 当鼠标放到图片上面去, 会显示文字信息
 		<div style="border: 1px solid red;">
 		<p> 用户名: <input type="text"/> </p>
 		<p> 密码: <input type="password"/> </p>
-		<p> 性别: 
-			<br /> 男 <input type="radio" name="gender" /> 
-			<br /> 女 <input type="radio" name="gender"/> 
-		</p> 
+		<p> 性别:
+			<br /> 男 <input type="radio" name="gender" />
+			<br /> 女 <input type="radio" name="gender"/>
+		</p>
 		<p> 爱好:
 			<br /> 羽毛球 <input type="checkbox" />
 			<br /> 吉他 <input type="checkbox" />
-			<br /> 轮滑 <input type="checkbox" />			
+			<br /> 轮滑 <input type="checkbox" />
 		</p>
 		<p> 城市:
 			<select>
@@ -325,7 +325,7 @@ title, 当鼠标放到图片上面去, 会显示文字信息
 				</optgroup>
 			</select>
 		</p>
-		<p>文件: 
+		<p>文件:
 			<input type="file"/>
 		</p>
 		<p>备注:
@@ -337,6 +337,13 @@ title, 当鼠标放到图片上面去, 会显示文字信息
 	</form>
 </body>
 ```
+
+```
+<textarea rows="3" cols="20">
+文本内容
+</textarea>
+```
+
 
 只要name=gender 相同, 它俩就可以互斥了
 size="10", 默认显示10个, 超过10个就给添加滚动条
@@ -409,15 +416,17 @@ input表单元素
 		</P>
 		<p>
 			<select name="city">
-				<option value="1">北京</option>	
-				<option value="2">上海</option>	
-				<option value="3">广州</option>				
+				<option value="1">北京</option>
+				<option value="2">上海</option>
+				<option value="3">广州</option>
 			</select>
 		</p>
 		<p>
 			备注: <textarea name="extra"></textarea>
 		</p>
     	<input type="submit" value="submit" />
+    	<input type="reset" value="重新填写" />
+    	<!--重置按钮可以还原表单元素的默认状态-->
     </form>
     ```
 
@@ -426,7 +435,24 @@ input表单元素
 
 **[label标签]**
 
-label标签作用不大, 只能说是在小细节方面帮你做一个用户体验的提升, 
+label标签作用不大, 只能说是在小细节方面帮你做一个用户体验的提升,
+label标签用于绑定一个表单元素, 当点击label标签内的文本时, 浏览器就会自动将焦点(光标)转到或者选择对应的表单元素上, 用来增加用户体验
+
+必须在label标签写上一个for属性, 定义一个名字, 对应的input表单有一个id属性,也有一个名字, 这两个名字必须是相同的, 这样才能建立好一个连接(就对上暗号了)
+
+```
+<label for="sex"> 男 </label>
+<input type="radio" name="sex" id="sex" />
+```
+
+```
+<body>
+    <label for="text">用户名: </label> <input type="text" id="text">
+    <label for="radio" id="nan"> <label for="nan">男 </label>
+    <label for="radio" id="nv"> <label for="nv"> 女 </label>
+</body>
+```
+
 
 **[ul ol dl标签]**
 列表标签
