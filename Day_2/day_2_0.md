@@ -644,3 +644,120 @@ position:
 			<div style="position: absolute; bottom: 0; right: 0">111</div>
     	</div>
     </body>
+    
+
+---
+
+Emmet语法
+Emmet语法的前身是Zencoding它使用缩写,来提高html/css的缩写速度, vscode内部已经集成该语法
+1, 快速生成html结构语法
+
+1.1 生成标签, 直接输入标签名按Tab键即可, 比如, div 然后tab键, 就可以生成`<div></div>`
+```
+！ + Tab 键,可以生成代码结构
+```
+
+```
+table + Tab键, 也可以生成结构
+```
+1.2 如果想要生成多个相同的标签, 加上 * 就可以了 比如 div * 3 ,就可以快速生成3个div
+
+```
+div*10, 中间不能有空格, 不然没有效果
+```
+
+1.3 如果有父子级关系的标签, 可以用 `>` 比如 `ul > li` 就可以了
+
+```
+ul>li
+```
+
+1.4 如果兄弟关系的标签, 用 + 就可以了, 比如 `div+p`
+
+1.5 如果生成带有类名或者id名字的, 直接写 `.demo` 或则 `#two tab键`就可以了
+`p.one`, 给p标签加了一个`class=one`的样式
+
+1.6 如果生成的div类名是有顺序的, 可以自增符号 $
+
+```
+.demo$*5
+```
+
+```
+<div class="demo"></div>
+<div class="demo1"></div>
+<div class="demo2"></div>
+<div class="demo3"></div>
+<div class="demo4"></div>
+<div class="demo5"></div>
+```
+file:///D:/Git_Data/Git_Hub/Python/english/开言英语/U02-2.md
+1.7 如果想要在生成的标签内些内容可以用 {} 表示
+```
+div{pink}
+```
+```
+<div>pink</div>
+```file:///D:/Git_Data/Git_Hub/Python/english/开言英语/U02-2.md
+
+2, 快速生成css样式语法
+
+
+
+CSS的复合选择器
+1.1 在css中,可以根据选择器的类型把选择器分为 基础选择器 和 复合选择器,  复合选择器是建立在基础选择器之上, 对
+基础选择器进行组合形成的
+
+1) 复合选择器可以更准确、更高效的选择目标元素(标签)
+2) 复合选择器是由两个或多个基础选择器, 通过不同的方式组合而成的
+3) 常用的复合选择器包括, 后代选择器、子选择器、并集选择器、伪类选择器等等
+
+1.2 后代选择器
+
+可以一层一层向下去查找
+
+```
+    <head>
+        <style>
+            /* 我想要把ol里面的小li选出来改为pink */
+            ol li {
+                color: pink;
+            }
+            ol li a {
+                color: red;
+            }
+            .nav li a {
+                color: yellow;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ol>
+            <li> 我是ol的孩子 </li>
+            <li> 我是ol的孩子 </li>
+            <li> 我是ol的孩子 </li>
+            <li> <a href="#"> 它是孙子</a></li>
+    </ol>
+    <ul class="nav">
+            <li> 我是ul的孩子</li>
+            <li> 我是ul的孩子</li>
+            <li> 我是ul的孩子</li>
+            <li> <a href="#"> 不会变化的</a></li>
+    </ul>
+    </body>
+```
+
+1.3 子选择器
+子元素选择器(子选择器) 只能选择作为某元素的最近一级子元素, 简单理解就是选亲儿子的元素
+
+```
+语法:
+元素1 > 元素2 { 样式声明 }
+```
+
+上述语法表示选择元素里面的所有直接后代(子元素)元素2
+
+元素1 和 元素2 中间用 大于号 隔开
+元素1 是父级， 元素2 是子级, 最终选择的是元素2
+元素2必须是亲儿子, 其孙子, 重孙之类都不归他管, 你可以叫他亲儿子选择器
