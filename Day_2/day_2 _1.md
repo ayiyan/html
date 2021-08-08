@@ -358,3 +358,267 @@ background-position: x, y;
 如果指定的两个值都是方位名词, 则两个值的前后顺序无关，比如 left, top 和 top, left效果一致
 如果只指定了一个方位名词, 另一个值省略, 则第二个值默认居中对齐
 
+2, 参数是精确单位
+如果参数值是精确坐标, 那么第一个肯定是x坐标, 第二个肯定是y坐标
+如果只指定一个数值, 那该数值一定是x坐标, 另一个默认垂直居中
+
+背景图像固定(背景附着)
+background-attachment 属性设置背景图像是否固定或者随着页面的其余部分滚动
+background-attachment 后期可以制作视差滚动的效果
+
+```
+background-attachment: scroll | fixed
+```
+
+|  参数   |          作用          |
+| ------ | ---------------------- |
+| scroll | 背景图像是随对象内容滚动 |
+| fixed  | 背景图像固定            |
+
+背景复合写法
+
+为了简化背景属性的代码, 我们可以将这些属性合并简写在同一个属性 background中,从而节约代码量
+当使用简写属性时, 没有特定的书写顺序, 一般习惯约定顺序为
+
+```
+background: 背景颜色  背景图片地址  背景平铺   背景图像滚动  背景图片位置
+```
+
+```
+background: transparent   url(image.jpg)   repeat-y   fixed   top;
+```
+在实际开发中, 我们更提倡的写法
+
+css3为我们提供了背景颜色半透明的效果
+```
+background: rgba(0，0，0，0.3)
+```
+
+|          属性          |      作用      |                      值                       |
+| --------------------- | -------------- | --------------------------------------------- |
+| background-color      | 背景颜色       | 预定义的颜色值/十六进制/RGB代码                 |
+| background-image      | 背景图片       | url(图片路径)                                  |
+| background-repeat     | 是否平铺       | repea/no-repeat/repeat-x/repeat-y             |
+| background-position   | 背景位置       | lenght/position 分别是x和y坐标                 |
+| background-attachment | 背景附着       | scroll(背景滚动)  /fixed(背景固定)             |
+| 背景简写               | 书写更简单     | 背景颜色 背景图片 背景平铺 背景滚动 背景位置    |
+| 背景色半透明           | 背景颜色半透明 | background: rgba(0，0，0, 0.3); 后面必须是4个值 |
+
+
+```
+    <head>
+        <style>
+            .nav a {
+                display: inline-block;
+                width: 120px;
+                height: 58px;
+                background-color: pink;
+                text-align: center;
+                line-height: 58px;
+                color: #fff;
+                text-decoration: none;
+            }
+            .nav .bg1 {
+                background: url(images/bg1.png) no-repeat;
+            }
+            .nav .bg1:hover {
+                background-image: url(images/bg11.png);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <a href='#'>五彩导航</a>
+            <a href='#'>五彩导航</a>
+            <a href='#'>五彩导航</a>
+            <a href='#'>五彩导航</a>
+            <a href='#'>五彩导航</a>
+        </div>
+    </body>
+```
+
+css的三大特性
+css有三个非常重要的三个特性, 层叠性, 继承性, 优先级
+
+1.1 层叠性
+相同选择器给设置相同的样式, 此时一个样式就会覆盖(层叠)另一个冲突的样式,
+层叠性主要解决样式冲突的问题
+
+```
+    <head>
+        <style>
+            div {
+                color: red;
+            }
+            div {
+                color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div> 长江后浪推前浪</div>
+    </body>
+```
+
+层叠性原则:
+样式冲突, 遵循的原则是就近原则, 哪个样式离结构近, 就执行哪个样式
+样式不冲突, 不会层叠
+
+1.2 继承性
+现实中的继承, 我们继承了父亲的姓
+css中的继承, 子标签会继承父标签的某些样式, 如文本颜色和色号,
+简单的理解就是, 子承父业
+
+恰当地使用集成可以简化代码, 降低css样式的复杂性
+子元素可以集成父元素的样式(text, font, line 这些元素开头的可以继承, 以及color属性)
+
+```
+    <head>
+        <style>
+            div {
+                color: pink;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>龙生龙, 凤生凤 </p>
+        </div>
+    </body>
+```
+
+`<div>`和`<p>`可以继成`<body>`
+
+```
+    <head>
+        <style>
+            body {
+                color: pink;
+                font: 12px/24px 'Microsoft Yahei';
+            }
+            div {
+                /* 子元素继承了父元素的body的行高1.5 */
+                /* 这个1.5 就是当前元素文字大小的 font-size的1.5倍 */
+                font-size: 14px;
+            }
+            p {
+                /* 1.5 * 16 = 24 当前的行高*/
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>粉红色的回忆</div>
+        <p> 分红色的回忆</div>
+    </body>
+```
+
+```
+    font: 12px/1.5 'Microsoft Yahei';
+```
+
+1.3 优先级
+当同一个元素指定多个选择器, 就会有优先级的产生
+选择器相同, 则执行层叠性
+选择器不同, 则根据选择器权重执行
+
+选择器权重如下表所示
+
+|        选择器        | 选择器权重 |
+| ------------------- | ---------- |
+| 继承 或者 *          | 0，0，0，0   |
+| 元素选择器           | 0，0，0，1   |
+| 类选择器, 伪类选择器 | 0，0，1，0   |
+| id选择器             | 0，1，0，0   |
+| 行内样式 style=""    | 1，0，0，0   |
+| !important 重要的    | 无穷大     |
+
+```
+    <head>
+        <style>
+            .test {
+                color: red;
+            }
+            div {
+                color: pink;
+            }
+            #demon {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="test" id="demon" style="color: purple"> 你笑起来真好看</div>
+    </body>
+```
+
+优先级注意点:
+1, 权重是有4组数字组成, 但是不会有进位
+2, 可以理解为类选择器永远大于元素选择器, id选择器永远大于类选择器, 以此类推
+3, 等级判断从左向右, 如果某一位数值相同, 则判断下一位数值
+4, 可以简单记忆法, 通配符和继承权重为0, 标签选择器为1, 类(伪装)选择器为10, id选择器为100, 行内样式表为1000
+!important 无穷大
+5, 继承的权重是0, 如果该元素没有直接选中, 不管父元素权重多个, 子元素得到的权重都是0
+
+```
+    <head>
+        <style>
+            #father {
+                color: #red;
+            }
+            /* p继承的权重为0 */
+            /* 所以以后我们看标签到底执行哪个样式, 就先看这个标签有没有直接被选出来 */
+            p {
+                color: pink;
+            }
+            body {
+                color: red;
+            }
+            a {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="father">
+            <p>你还是很好看</p>
+        </div>
+        <a href="#"> 我是单独的样式 </a>
+    </body>
+```
+
+权重叠加: 如果是复合选择器, 则会有权重叠加, 需要计算权重
+
+```
+    <head>
+        <style>
+            /* li的权重就是0，0，0，1 */
+            li {
+                color: red;
+            }
+            ul li {
+                color: green;
+            }
+            .nav li {
+                color： pink;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>大猪蹄子</li>
+            <li>大肘子</li>
+            <li>猪尾巴</li>
+        </ul>
+    </body>
+```
+
+```
+    div ul li ---> 0,0,0,3
+    .nav ul li ---> 0,0,1,2
+    a:hover ---> 0,0,1,1
+    .nav a ---> 0,0,1,1
+```
+
+
