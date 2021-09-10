@@ -622,3 +622,108 @@ css中的继承, 子标签会继承父标签的某些样式, 如文本颜色和�
 ```
 
 
+看透网页布局的本质
+网页布局过程:
+1, 先准备好相关的网页元素, 网页元素基本都是盒子Box
+2, 利用css设置好盒子样式, 然后摆放到响应位置
+3, 往盒子里面装内容
+
+网页布局的核心本质, 就是利用css摆盒子
+
+盒子模型(box model)组成
+所谓盒子模型, 就是把html页面中的布局元素看作是一个矩形的盒子, 也就是一个盛装内容的容器
+css盒子模型本质是一个盒子, 封装周围的html元素, 它包括, 边框, 外边距, 内边距, 和实际内容
+
+```
+    <head>
+        <style>
+            div {
+                width: 300px;
+                height: 200px;
+                border-width: 5px;
+                /* 边框的粗细, 一般情况下 */
+                border-style: dashed；
+                /* dashed 是虚线边框 */
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+```
+
+|     属性      |          作用         |
+| ------------ | --------------------- |
+| border-width | 定义边框粗细, 单位是px |
+| border-style | 边框的样式             |
+| border-color | 边框的颜色             |
+
+none: 无边框， 与任何指定的border-width值无关
+hidden: 隐藏边框, ie不支持
+dotted: 在mac平台上ie4+与windows和unix平台上ie5.5+为点线, 否则为实线
+dashed: 在mac平台上ie4+与windows和unix平台上ie5.5+为虚线, 否则为实线
+solid: 实线边框
+double: 双线边框, 两条单线与间隔的和等于指定的border-width值
+groove: 根据border-color的值画3d凹槽
+ridge: 根据border-color的值画菱形边框
+inset: 根据border-color的值画3d凹边
+outset: 根据border-color的值画3d凸边
+
+
+css边框允许你指定一个元素边框的样式和颜色
+边框简写
+
+```
+    border: 1px solid red; 没有顺序
+```
+
+边框分开写法:
+
+```
+    border-top:  1px  solid  red; /* 只设定上边框, 其余同理 */
+```
+
+
+```
+    border-bottom: 10px   dashed   purple;
+```
+
+```
+    <head>
+        table {
+            width: 500px;
+            height: 249px;
+        }
+        th {
+            height: 35px;
+        }
+        table,
+        td,th {
+            border: 1px solid pink;
+            /* 合并相邻的边框 */
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+    </head>
+    <body>
+        <table align="center" cellspacing="0">
+            <tr>
+                <th>排名</th>
+                <th>关键词</th>
+                <th>趋势</th>
+                <th>进入搜索</th>
+                <th>最近七日</th>
+                <th>相关连接</th>
+            </tr>
+        </table>
+    </body>
+```
+
+1.6 内边距(padding)
+padding属性用于设置内边距， 即边框与内容之间的距离
+| 属性    |  作用   |
+| --- | --- |
+|  padding-left   |  左内边距   |
+|  padding-right   |  右内边距   |
+| padding-top    | 上内边距    |
+|  padding-bottom   |  下内边距   |
